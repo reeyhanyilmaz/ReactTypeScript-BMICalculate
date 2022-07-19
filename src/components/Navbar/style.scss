@@ -1,0 +1,41 @@
+@import "../../styles/variable";
+
+.navbar {
+    height: 120px;
+    width: 100vw;
+    background-color: $color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+      img {
+        width: 140px;
+        height: 100px;
+        margin-left: 60px;
+        padding: 5px 0;
+   }
+
+   ul{
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin: 0;
+      padding: 5px;
+      color: white;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        &:hover{
+          color: black;
+        }
+      }
+    }
+   }
+}
