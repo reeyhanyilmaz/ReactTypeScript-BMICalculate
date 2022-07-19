@@ -1,23 +1,30 @@
-import React from 'react'
-import "./style.scss"
+import React from "react";
+import "./style.scss";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className='navbar'>
-        <span>
+    <div className="navbar">
+      <span>
         <img src="./assets/header.png" alt="logo" />
-        </span>
-        
-        <span>
+      </span>
+
+      <span>
         <ul>
-            <li>BMI Nedir</li>
-            <li>BMI Hesapla</li>
-            <li>Verilerim</li>
+          <li>
+            <Link to="/whatisBMI">BMI Nedir</Link>
+          </li>
+          <li>
+            <Link to="/">BMI Hesapla</Link>
+          </li>
+
+          <li>
+            <Link to="/calculate-data">Verilerim</Link>
+          </li>
         </ul>
-        </span>
-      
+      </span>
     </div>
-  )
+  );
 }
 
 export default Navbar;
