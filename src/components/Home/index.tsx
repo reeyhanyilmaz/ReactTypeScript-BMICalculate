@@ -20,15 +20,15 @@ function Home() {
 
   const Swal = require("sweetalert2");
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  };
-
   const [name, setName] = useState<string>("");
   const [weight, setWeight] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   const [BMI, setBMI] = useState<number>();
   const [localData, setLocalData] = useState<any>([]);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  };
 
   const calculate = () => {
     const BMICalculate = weight / (height / 100) ** 2;
@@ -40,12 +40,16 @@ function Home() {
     });
     setLocalData(localData);
 
+
+    //localStorage
     const handleStorage = () => {
       localStorage.setItem("userData", JSON.stringify([...localData]));
       JSON.parse(localStorage.getItem("userData") || "{}"); //  bu kısım || type error verdiği için.
     };
     handleStorage();
 
+
+    //kilo aralığına göre yazılacak mesajlar
     const status = () => {
       if (BMICalculate < 18.5) {
         return "Zayıf";
@@ -59,6 +63,8 @@ function Home() {
     };
     status();
 
+
+    //hesaplama sonrası ekrana açılan bilgi alerti
     Swal.fire({
       title: `${status()}`,
       text: `${name.toUpperCase()} BMI değerin: ${BMICalculate.toFixed(1)}`,
@@ -83,6 +89,18 @@ function Home() {
     setName("");
     setWeight(0);
     setHeight(0);
+
+
+    //input boş ise alert verir
+    if(weight === 0 || name === "" || height === 0){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'İnput alanlarını boş geçemezsiniz!',
+        showConfirmButton: false,
+        timer: 2000,
+      }) 
+    }
   };
 
   return (
