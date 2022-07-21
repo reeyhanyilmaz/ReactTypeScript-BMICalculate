@@ -31,25 +31,37 @@ function Home() {
   };
 
   const calculate = () => {
-    const BMICalculate = weight / (height / 100) ** 2;
-    setBMI(BMICalculate);
+    //input boş ise alert verir
+    if (weight === 0 || name === "" || height === 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "İnput alanlarını boş geçemezsiniz!",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } else {
 
-    localData.push({
-      name: name,
-      BMI: BMICalculate,
-    });
-    setLocalData(localData);
+      //inputlar dolu ise aşağıdakiler çalışacak.
+      const BMICalculate = weight / (height / 100) ** 2;
+      setBMI(BMICalculate);
 
-
-    //localStorage
-    const handleStorage = () => {
-      localStorage.setItem("userData", JSON.stringify([...localData]));
-      JSON.parse(localStorage.getItem("userData") || "{}"); //  bu kısım || type error verdiği için.
-    };
-    handleStorage();
-
-
-    //kilo aralığına göre yazılacak mesajlar
+      localData.push({
+        name: name,
+        BMI: BMICalculate,
+      });
+      setLocalData(localData);
+    
+      
+      //localStorage
+      const handleStorage = () => {
+        localStorage.setItem("userData", JSON.stringify([...localData]));
+        JSON.parse(localStorage.getItem("userData") || "{}"); //  bu kısım || type error verdiği için.
+      };
+      handleStorage();
+   
+    
+      //kilo aralığına göre yazılacak mesajlar
     const status = () => {
       if (BMICalculate < 18.5) {
         return "Zayıf";
@@ -89,24 +101,13 @@ function Home() {
     setName("");
     setWeight(0);
     setHeight(0);
-
-
-    //input boş ise alert verir
-    if(weight === 0 || name === "" || height === 0){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'İnput alanlarını boş geçemezsiniz!',
-        showConfirmButton: false,
-        timer: 2000,
-      }) 
-    }
+    }  
   };
 
   return (
     <div className="home-container">
       <div>
-        <img src="../assets/home.png" alt="homeimage" className="homeimage"/>
+        <img src="../assets/home.png" alt="homeimage" className="homeimage" />
       </div>
 
       <div>
