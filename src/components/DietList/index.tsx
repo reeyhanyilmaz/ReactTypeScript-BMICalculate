@@ -63,47 +63,51 @@ padding: 1em;
 margin: 1em;
 `;
 
+
+
 function DietList() {
   return (
     <div className="container">
       <div className="content">
-        <h1>Diyet Listesi</h1>
         <div className="p-tag">
           <P1> 18,5 ve altı Zayıf</P1>
           <P2>18.5 - 25 Normal</P2>
           <P3>25 - 30 Kilolu</P3>
           <P4> 30 ve üzeri Obez</P4>
         </div>
-        <h3>Düşük Kalorili Haftalık Diyet Listesi</h3>
+        <h1>Düşük Kalorili Haftalık Diyet Listesi</h1>
 
         <div className="food-div">
           <Div>
-            <p>Kahvaltı </p>
-            Yiyebildiğiniz kadar domates, salatalık, biber, maydanoz, roka, nane
-            2 adet iyi haşlanmış yumurta 5 tam ceviz içi Damak zevkine göre pul
-            biber, kimyon, karabiber yumurtaya eklenir <em>Not: Ekmek yemeniz
-            önerilmiyor.</em> 
+            <p>Kahvaltı <img src="./assets/breakfast.png" alt="breakfast" /> </p>
+            ✓ Yiyebildiğiniz kadar domates, salatalık, biber, maydanoz, roka, nane. <br />
+            ✓ 2 adet iyi haşlanmış yumurta 5 tam ceviz içi. <br />
+            ✓ Damak zevkine göre pul biber, kimyon, karabiber yumurtaya eklenir . <br />
+            <em>Not: Ekmek yemeniz önerilmiyor.</em> 
           </Div>
           <Div>
-            <p>Öğle Yemeği</p>
-            1 kase mercimek çorbası <em>(yağlı olmamalı), </em>1 büyük
-            kase salatalık, biber, domatesli semizotu salatası 1 kase yoğurt ve
-            1 çay kaşığı toz zerdeçalı karıştırıp tüketebilirsiniz . İstediğiniz
-            kadar maydanoz, roka, nane, dereotu gibi yeşillikler.
-          </Div>
-
-          <Div>
-            <p>Ara Öğün</p>    
-            3 yemek kaşığı lor peyniri 5 tam ceviz <em>(ekmek yerine
-            tüketilecektir)</em>. 1 fincan Türk kahvesi veya filtre kahve içilebilir. Veya 1 porsiyon mevsim meyvesi.
+            <p>Öğle Yemeği <img src="./assets/diet.png" alt="diet" /> </p>
+            ✓ 1 kase mercimek çorbası <em>(yağlı olmamalı)</em> <br />
+            ✓ 1 büyük kase salatalık, biber, domatesli semizotu salatası. <br />
+            ✓ 1 kase yoğurt ve 1 çay kaşığı toz zerdeçalı karıştırıp tüketebilirsiniz. <br />
+            ✓ İstediğiniz kadar maydanoz, roka, nane, dereotu gibi yeşillikler.
           </Div>
 
           <Div>
-            <p>Akşam Yemeği </p>2 ince dilim karpuz  <em>(eğer yoksa 1 adet şeftali,
-            elma gibi mevsim meyvesi), </em> 4 yemek kaşığı lor peyniri , <em>(Az yağlı ve
-            tuzlu olması öneriliyor), </em> 5 tam ceviz içi <em>(ekmek yerine yiyeceğinizi
-            unutmayın), </em> 1 kase bol domatesli, salatalıklı semizotu salatası bol
-            limon sosla beraber.
+            <p>Ara Öğün <img src="./assets/ara-ogun.png" alt="ara-ogun" />  </p>    
+            ✓ 3 yemek kaşığı lor peyniri 5 tam ceviz <em>(ekmek yerine
+            tüketilecektir)</em>. <br />
+            ✓ 1 fincan Türk kahvesi veya filtre kahve içilebilir. <br />
+            ✓ Veya 1 porsiyon mevsim meyvesi.
+          </Div>
+
+          <Div>
+            <p>Akşam Yemeği <img src="./assets/dinner.png" alt="dinner" /> </p>
+            ✓ 2 ince dilim karpuz  <em>(eğer yoksa 1 adet şeftali, elma gibi mevsim meyvesi) </em> <br />
+            ✓ 4 yemek kaşığı lor peyniri , <em>(Az yağlı ve
+            tuzlu olması öneriliyor)</em> <br />
+            ✓ 5 tam ceviz içi <em>(ekmek yerine yiyeceğinizi unutmayın) </em> <br />
+            ✓ 1 kase bol domatesli, salatalıklı semizotu salatası bol limon sosla beraber.
           </Div>
         </div>
       </div>

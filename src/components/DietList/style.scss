@@ -19,6 +19,10 @@
         background-color: #f5f5f5;
         padding: 20px;             
         margin: 40px 40px;
+
+        h1{
+            color: $color;
+        }
     }
 
     .p-tag{
@@ -32,10 +36,19 @@
         height: 100%;
 
         p{
-            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
             font-weight: bold;
-            margin: 0;
+            margin: 10px 5px 0 5px;
             color: $color;
+
+            img{
+                width: 40px;
+                height: 40px;
+                margin-left: 5px;
+            }
         }
     }
 }
