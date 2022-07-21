@@ -61,7 +61,7 @@ function Home() {
 
     Swal.fire({
       title: `${status()}`,
-      text: `${name} BMI değerin: ${BMICalculate}`,
+      text: `${name.toUpperCase()} BMI değerin: ${BMICalculate.toFixed(1)}`,
       width: 600,
       padding: "3em",
       color: "#716add",
@@ -99,6 +99,7 @@ function Home() {
               type="text"
               placeholder="İsminizi giriniz..."
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </span>
 
@@ -108,6 +109,7 @@ function Home() {
               type="number"
               placeholder="Kilonuzu giriniz, örn 50kg"
               onChange={(e) => setWeight(parseInt(e.target.value))}
+              required
             />
           </span>
 
@@ -117,15 +119,10 @@ function Home() {
               type="number"
               placeholder="Boyunuzu giriniz, örn 160cm"
               onChange={(e) => setHeight(parseInt(e.target.value))}
+              required
             />
           </span>
-          <Button onClick={ name && weight && height ? calculate : Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'İnput alanlarını boş geçemezsiniz!',
-                showConfirmButton: false,
-                timer: 2000,
-              })}>Hesapla</Button>
+          <Button onClick={calculate}>Hesapla</Button>
         </form>
       </div>
     </div>
