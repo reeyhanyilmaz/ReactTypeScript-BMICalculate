@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./style.scss";
 import styled from "styled-components";
 
-const Btn = styled.button`
+function Home() {  
+
+  const Btn = styled.button`
     color: rgb(180, 114, 180);
     font-size: 1em;
     margin: 1em;
@@ -16,8 +18,6 @@ const Btn = styled.button`
       color: white;
     }
   `;
-
-function Home() {  
 
   const Swal = require("sweetalert2");
 
@@ -78,7 +78,7 @@ function Home() {
 
 
     //hesaplama sonrası ekrana açılan bilgi alerti
-    Swal.fire({
+      Swal.fire({
       title: `${status()}`,
       text: `${name.toUpperCase()} BMI değerin: ${BMICalculate.toFixed(1)}`,
       width: 600,
