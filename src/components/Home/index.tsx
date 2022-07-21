@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import styled from "styled-components";
 
-function Home() {
-  const Button = styled.button`
+const Btn = styled.button`
     color: rgb(180, 114, 180);
     font-size: 1em;
     margin: 1em;
@@ -17,6 +16,8 @@ function Home() {
       color: white;
     }
   `;
+
+function Home() {  
 
   const Swal = require("sweetalert2");
 
@@ -141,7 +142,7 @@ function Home() {
               required
             />
           </span>
-          <Button onClick={calculate}>Hesapla</Button>
+          <Btn onClick={calculate}>Hesapla</Btn>
         </form>
       </div>
     </div>
