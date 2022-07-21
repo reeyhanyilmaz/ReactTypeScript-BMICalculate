@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import CalculateData from "./components/CalculateData";
+import DietList from "./components/DietList";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import WhatIsBMI from "./components/WhatIsBMI";
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/whatisBMI" element={<WhatIsBMI />} />
-        <Route path="/calculate-data" element={<CalculateData />} />
+        <Route path="/diet-list" element={<DietList />} />
       </Routes>
     </div>
   );
