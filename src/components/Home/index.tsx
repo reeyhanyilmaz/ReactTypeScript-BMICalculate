@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './style.scss';
 import styled from 'styled-components';
+import {useBMI } from "../../context/BMIContext";
 
 function Home() {
  
@@ -18,37 +19,12 @@ function Home() {
     color: white;
   }
 `;
-    const [name, setName] = useState<string>("");
-    const [weight, setWeight] = useState<number>(0);
-    const [height, setHeight] = useState<number>(0);
-    const [BMI, setBMI] = useState<number>();
-    const [localData, setLocalData] = useState<any>([]);
 
-  const handleSubmit = (e:any) => {
-        e.preventDefault();              
-  }
+const handleSubmit = (e:any) => {
+  e.preventDefault();              
+}
 
-    const calculate = () => {
-
-          const BMICalculate = (weight / (height / 100) ** 2);
-          setBMI(BMICalculate);
-
-          localData.push({
-            name: name,
-            BMI: BMICalculate,
-          })
-          setLocalData(localData);
-
-          const handleStorage = () => {
-            localStorage.setItem('userData', JSON.stringify({...localData, localData}));
-            JSON.parse(localStorage.getItem('userData') || '{}'); //  bu kısım || type error verdiği için.
-          }
-          handleStorage();
-
-          setName("");
-          setWeight(0);
-          setHeight(0);
-  }
+const {name, setName, calculate, weight, setWeight, height, setHeight} = useBMI();
 
   return (
     <div className='home-container'>
