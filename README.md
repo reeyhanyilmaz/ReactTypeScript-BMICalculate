@@ -7,7 +7,7 @@ https://reyhan-bmi-calculator.netlify.app/
 
 ## Kullanılan özellikler:
 * react.js ve ```TypeScript```
-* Stillendirme de ```styled-components``` ve ```SASS```
+* Stillendirmede ```styled-components``` ve ```SASS```
 * Alert uyarılarında ```sweetalert2 ```
 * react-router-dom
 * localStorage
